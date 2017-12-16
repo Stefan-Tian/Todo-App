@@ -1,22 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
+import Loading from "../components/Loading";
 
-export const PublicRoute = ({
-  isAuthenticated,
-  component: Component,
-  ...rest
-}) => (
+export const PublicRoute = ({ auth, component: Component, ...rest }) => (
   <Route
     {...rest}
-    component={props =>
-      isAuthenticated ? <Redirect to="/todos" /> : <Component {...props} />
-    }
+    component={props => {
+      if (auth == null) {
+        return <Loading />;
+      }
+      return !!auth ? <Redirect to="/todos" /> : <Component {...props} />;
+    }}
   />
 );
 
-const mapStateToProps = ({ auth }) => ({
-  isAuthenticated: !!auth
-});
+const mapStateToProps = ({ auth }) => ({ auth });
 
 export default connect(mapStateToProps)(PublicRoute);

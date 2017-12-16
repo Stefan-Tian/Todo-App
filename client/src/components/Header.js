@@ -8,7 +8,7 @@ const Header = () => (
         <Link to="/todos">
           <h1>Todo</h1>
         </Link>
-        <button>Sign Out</button>
+        <a to="/api/logout">Sign Out</a>
       </div>
     </div>
   </header>

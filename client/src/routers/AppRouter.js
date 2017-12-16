@@ -12,7 +12,7 @@ const TodoNew = () => <h1>TodoNew</h1>;
 const TodoList = () => <h1>TodoList</h1>;
 
 class App extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser();
   }
 
