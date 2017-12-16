@@ -8,17 +8,19 @@ export const PrivateRoute = ({ auth, component: Component, ...rest }) => (
   <Route
     {...rest}
     component={props => {
-      if (auth == null) {
-        return <Loading />;
+      switch (auth) {
+        case null:
+          return <Loading />;
+        case false:
+          return <Redirect to="/" />;
+        default:
+          return (
+            <div>
+              <Header />
+              <Component {...props} />
+            </div>
+          );
       }
-      return !!auth ? (
-        <div>
-          <Header />
-          <Component {...props} />
-        </div>
-      ) : (
-        <Redirect to="/" />
-      );
     }}
   />
 );
