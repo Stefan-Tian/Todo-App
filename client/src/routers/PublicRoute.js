@@ -7,14 +7,11 @@ export const PublicRoute = ({ auth, component: Component, ...rest }) => (
   <Route
     {...rest}
     component={props => {
-      switch (auth) {
-        case null:
-          return <Loading />;
-        case false:
-          return <Component {...props} />;
-        default:
-          return <Redirect to="/todos" />;
+      if (auth === null) {
+        return <Loading />;
       }
+
+      return !!auth ? <Redirect to="/todos" /> : <Component {...props} />;
     }}
   />
 );

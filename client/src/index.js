@@ -2,14 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
-import App from "./routers/AppRouter";
+import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 
 const store = configureStore();
 
-ReactDOM.render(
+const jsx = (
   <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
+    <AppRouter />
+  </Provider>
 );
+
+ReactDOM.render(jsx, document.getElementById("root"));
