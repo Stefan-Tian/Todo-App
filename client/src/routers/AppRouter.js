@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
+import Login from "../components/Login";
 
-const Header = () => <h1>Header</h1>;
-const Login = () => <h1>Login</h1>;
 const Todo = () => <h1>Todo</h1>;
 const TodoNew = () => <h1>TodoNew</h1>;
 const TodoList = () => <h1>TodoList</h1>;
