@@ -5,9 +5,9 @@ import * as actions from "../actions";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import Login from "../components/Login";
+import TodoNew from "../components/TodoNew";
 
 const Todo = () => <h1>Todo</h1>;
-const TodoNew = () => <h1>TodoNew</h1>;
 const TodoList = () => <h1>TodoList</h1>;
 
 class App extends Component {
