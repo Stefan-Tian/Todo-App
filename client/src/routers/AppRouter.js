@@ -6,9 +6,9 @@ import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import Login from "../components/Login";
 import TodoNew from "../components/TodoNew";
+import TodoList from "../components/TodoList";
 
 const Todo = () => <h1>Todo</h1>;
-const TodoList = () => <h1>TodoList</h1>;
 
 class App extends Component {
   componentWillMount() {

@@ -18,7 +18,7 @@ module.exports = app => {
 
   app.get("/api/todos", requireLogin, (req, res) => {
     Todo.find({ _user: req.user.id }).then(
-      todos => res.send({ todos }),
+      todos => res.send(todos),
       e => res.status(400).send(e)
     );
   });
