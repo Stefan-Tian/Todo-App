@@ -7,8 +7,8 @@ import PublicRoute from "./PublicRoute";
 import Login from "../components/Login";
 import TodoNew from "../components/TodoNew";
 import TodoList from "../components/TodoList";
-
-const Todo = () => <h1>Todo</h1>;
+import Todo from "../components/Todo";
+import EditTodo from "../components/EditTodo";
 
 class App extends Component {
   componentWillMount() {
@@ -23,6 +23,7 @@ class App extends Component {
             <Switch>
               <PublicRoute exact path="/" component={Login} />
               <PrivateRoute exact path="/todo/:id" component={Todo} />
+              <PrivateRoute exact path="/todo/edit/:id" component={EditTodo} />
               <PrivateRoute exact path="/create" component={TodoNew} />
               <PrivateRoute exact path="/todos" component={TodoList} />
             </Switch>

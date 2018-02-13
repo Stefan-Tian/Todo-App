@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import * as actions from "../actions";
+import TodoListFilter from "./TodoListFilter";
+import { filterTodos } from "../selectors/todo";
 
 class TodoList extends Component {
   componentDidMount() {
@@ -9,12 +11,13 @@ class TodoList extends Component {
   }
 
   renderTodos() {
-    return this.props.todo.map(todo => (
-      <div key={todo._id}>
-        <label>Title</label>
-        <p>{todo.title}</p>
-        <label>Text</label>
-        <p>{todo.text}</p>
+    return this.props.todo.map(({ _id, title, text }) => (
+      <div key={_id}>
+        <Link to={`/todo/${_id}`}>
+          <p>{title}</p>
+          <p>{text}</p>
+        </Link>
+        <button onClick={() => this.props.deleteTodo(_id)}>REMOVE</button>
       </div>
     ));
   }
@@ -22,6 +25,7 @@ class TodoList extends Component {
   render() {
     return (
       <div>
+        <TodoListFilter />
         {this.renderTodos()}
         <Link to="/create">New Todo</Link>
       </div>
@@ -29,6 +33,8 @@ class TodoList extends Component {
   }
 }
 
-const mapStateToProps = ({ todo }) => ({ todo });
+const mapStateToProps = ({ todo, filter }) => ({
+  todo: filterTodos(todo, filter)
+});
 
 export default connect(mapStateToProps, actions)(TodoList);

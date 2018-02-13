@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { ObjectID } = require("mongodb");
 const _ = require("lodash");
 const requireLogin = require("../middlewares/requireLogin");
 
@@ -36,7 +37,7 @@ module.exports = app => {
     }).then(
       todo => {
         if (todo) {
-          return res.send({ todo });
+          return res.send(todo);
         }
 
         res.status(404).send();
@@ -58,7 +59,7 @@ module.exports = app => {
     }).then(
       todo => {
         if (todo) {
-          return res.send({ todo });
+          return res.send(todo._id);
         }
 
         res.status(404).send();
@@ -99,7 +100,7 @@ module.exports = app => {
           return res.status(404).send();
         }
 
-        res.send({ todo });
+        res.send(todo);
       })
       .catch(e => res.status(404).send(e));
   });
