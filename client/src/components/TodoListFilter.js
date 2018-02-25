@@ -19,19 +19,20 @@ export class TodoListFilter extends Component {
     return (
       <div>
         <input
+          className="todo-searchbar"
           type="text"
           placeholder="Search Todo"
           value={this.props.filter.text}
           onChange={this.onTextChange}
         />
-        <select
+        {/* <select
           value={this.props.filter.completed}
           onChange={this.onSortChange}
         >
           <option value="no">All</option>
           <option value="true">Completed</option>
           <option value="false">Not Completed</option>
-        </select>
+        </select> */}
       </div>
     );
   }

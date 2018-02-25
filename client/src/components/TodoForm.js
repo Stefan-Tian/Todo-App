@@ -3,29 +3,38 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import { Link } from "react-router-dom";
 import formField from "./formField";
-import TodoField from "./TodoField";
 
 class TodoForm extends Component {
   renderFields() {
-    return _.map(formField, ({ label, name }) => (
-      <Field
-        key={name}
-        component={TodoField}
-        type="text"
-        label={label}
-        name={name}
-      />
-    ));
+    return (
+      <div className="todoform__new">
+        <p className="todoform__new--title-label">Title</p>
+        <Field
+          className="todoform__new--title-field"
+          component="input"
+          type="input"
+          name="title"
+        />
+        <p className="todoform__new--text-label">Description</p>
+        <Field
+          className="todoform__new--text-field"
+          component="textarea"
+          name="text"
+        />
+        <Link className="todoform__new--cancel" to="/todos">
+          Cancel
+        </Link>
+        <button className="todoform__new--next" type="submit">
+          Next
+        </button>
+      </div>
+    );
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.props.onTodoSubmit}>
-          {this.renderFields()}
-          <Link to="/todos">Cancel</Link>
-          <button type="submit">Next</button>
-        </form>
+      <div className="todoform">
+        <form onSubmit={this.props.onTodoSubmit}>{this.renderFields()}</form>
       </div>
     );
   }

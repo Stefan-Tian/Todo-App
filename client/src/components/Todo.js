@@ -13,28 +13,31 @@ export class Todo extends Component {
     return this.props.todo
       .filter(({ _id }) => _id === id)
       .map(({ _id, title, text, completed, completedAt }) => (
-        <div key={_id}>
-          <p>{title}</p>
-          <p>{text}</p>
+        <div className="todoform__text" key={_id}>
+          <p className="todoform__text--title">{title}</p>
+          <p className="todoform__text--text">{text}</p>
           {completed ? (
-            <div>
-              <p>COMPLETED</p>
+            <div className="todoform__text--complete">
+              <p>Status: COMPLETED</p>
               <p>CompletedAt: {completedAt}</p>
             </div>
           ) : (
-            <p>YET TO BE COMPLETED</p>
+            <p className="todoform__text--complete">
+              status: YET TO BE COMPLETED
+            </p>
           )}
+          <Link
+            className="todoform__text--edit-btn"
+            to={`/todo/edit/${this.props.match.params.id}`}
+          >
+            Edit
+          </Link>
         </div>
       ));
   }
 
   render() {
-    return (
-      <div>
-        {this.renderTodo()}
-        <Link to={`/todo/edit/${this.props.match.params.id}`}>edit</Link>
-      </div>
-    );
+    return <div className="todoform">{this.renderTodo()}</div>;
   }
 }
 

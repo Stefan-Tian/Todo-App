@@ -1,0 +1,8 @@
+.btn {
+  &--link {
+    font-size: $font-size-s;
+    grid-column: 3 / 4;
+    align-self: center; // vertically
+    justify-self: left; // horizontally
+  }
+}

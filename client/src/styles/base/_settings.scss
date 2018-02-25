@@ -1,0 +1,89 @@
+// Color
+$silver-color-shadow-background: rgba(51, 50, 50, 0.8);
+$silver-color-border-background: rgba(161, 159, 159, 0.8);
+$gold-color-shadow-background: rgba(73, 60, 30, 0.8);
+$gold-color-border-background: rgba(175, 174, 81, 0.8);
+$silver-color-shadow-text: #e6ecec;
+$silver-color-border-text: #dcdce0;
+@mixin dark-gradient-background {
+  height: 100%;
+  background: #272626; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom left,
+    #464444,
+    #2c2b2b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom left,
+    #464444,
+    #2c2b2b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@mixin blue-gradient-background {
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom left,
+    #141e30,
+    #1d2f44
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom left,
+    #141e30,
+    #1d2f44
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@mixin silver-gradient-background {
+  background: #e5e4e2;
+  background: radial-gradient(farthest-corner at 50% 53%, #d6d5d4, #c7c5c5da);
+}
+
+@mixin gold-gradient-background {
+  background: radial-gradient(
+    farthest-corner at 50% 50%,
+    rgb(218, 194, 137),
+    #caad69
+  );
+}
+
+@mixin dark-gradient-text {
+  background: -webkit-linear-gradient(#313130, #363633);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #1f1d1d;
+}
+
+@mixin silver-gradient-text {
+  background: -webkit-linear-gradient(#e5e4e2, #e7e7e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Font
+$font-size-lg: 1.8rem;
+$font-size-s: 1.6rem;
+
+// Spacing
+$s-size: 1.2rem;
+$m-size: 1.6rem;
+$l-size: 3.2rem;
+$xl-size: 4.8rem;
+
+@mixin form-card {
+  margin: 20px auto;
+  padding: 15px;
+  width: 400px;
+  height: 500px;
+  border-radius: 15px;
+}
+
+@mixin placeholder {
+  color: rgb(250, 248, 248);
+  -webkit-text-fill-color: #dbd5d5;
+  padding: 10px 10px;
+  font-size: 1.8rem;
+}

@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "client": "npm run start --prefix client",
+    "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "license": "MIT",
@@ -25,6 +25,7 @@
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth20": "^1.0.0",
+    "react-scripts": "^1.1.1",
     "redux-form": "^7.2.0",
     "redux-thunk": "^2.2.0"
   }

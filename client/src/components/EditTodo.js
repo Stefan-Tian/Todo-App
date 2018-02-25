@@ -15,44 +15,48 @@ export class EditTodo extends Component {
     return todo
       .filter(({ _id }) => _id === id)
       .map(({ _id, title, text, completed }) => (
-        <div key={_id}>
-          <div>
-            <label>Title</label>
-            <Field
-              component="input"
-              type="text"
-              name="title"
-              placeholder={title}
-            />
-          </div>
-          <div>
-            <label>Text</label>
-            <Field
-              component="input"
-              type="text"
-              name="text"
-              placeholder={text}
-            />
-          </div>
-          <div>
-            <label>Completed</label>
-            {completed ? (
+        <div className="todoform__input" key={_id}>
+          <p className="todoform__input--title-label">Title</p>
+          <Field
+            className="todoform__input--title-field"
+            component="input"
+            type="text"
+            name="title"
+            placeholder={title}
+          />
+          <p className="todoform__input--text-label">Description</p>
+          <Field
+            className="todoform__input--text-field"
+            component="textarea"
+            name="text"
+            placeholder={text}
+          />
+          <p className="todoform__input--complete-label">Completed</p>
+          {completed ? (
+            <div className="todoform__input--complete-field">
               <Field
+                className="modify-checkbox"
                 component="input"
                 type="checkbox"
                 label="completed"
                 name="completed"
                 checked
               />
-            ) : (
+            </div>
+          ) : (
+            <div className="todoform__input--complete-field">
               <Field
+                className="modify-checkbox"
                 component="input"
                 type="checkbox"
                 label="completed"
                 name="completed"
               />
-            )}
-          </div>
+            </div>
+          )}
+          <button className="todoform__input--done" type="submit">
+            Done
+          </button>
         </div>
       ));
   }
@@ -67,12 +71,11 @@ export class EditTodo extends Component {
     const { handleSubmit } = this.props; // coming from redux
 
     return (
-      <div>
+      <div className="todoform">
         <form
           onSubmit={handleSubmit(this.onSubmit.bind(this))} // redux things first then call our function
         >
           {this.renderFields()}
-          <button type="submit">Done</button>
         </form>
       </div>
     );

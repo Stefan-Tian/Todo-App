@@ -11,23 +11,41 @@ class TodoList extends Component {
   }
 
   renderTodos() {
-    return this.props.todo.map(({ _id, title, text }) => (
-      <div key={_id}>
-        <Link to={`/todo/${_id}`}>
-          <p>{title}</p>
-          <p>{text}</p>
+    return this.props.todo.map(({ _id, title }, index) => (
+      <div className="todolist__not-completed__todo" key={_id}>
+        <Link
+          className="todolist__not-completed__todo__title"
+          to={`/todo/${_id}`}
+        >
+          <p>
+            {index + 1}. {title}
+          </p>
         </Link>
-        <button onClick={() => this.props.deleteTodo(_id)}>REMOVE</button>
+        <button
+          className="todolist__not-completed__todo__btn"
+          onClick={() => this.props.deleteTodo(_id)}
+        >
+          REMOVE
+        </button>
       </div>
     ));
   }
 
   render() {
     return (
-      <div>
-        <TodoListFilter />
-        {this.renderTodos()}
-        <Link to="/create">New Todo</Link>
+      <div className="content-container">
+        <div className="todolist">
+          <div className="todolist__not-completed">
+            <TodoListFilter />
+            {this.renderTodos()}
+            <div className="todolist--grid">
+              <Link className="todolist--grid__new" to="/create">
+                New Task
+              </Link>
+            </div>
+          </div>
+          <div className="todolist__completed" />
+        </div>
       </div>
     );
   }

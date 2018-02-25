@@ -1,24 +1,29 @@
-import _ from "lodash";
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import formField from "./formField";
 import * as actions from "../actions";
 
 const TodoFormReview = ({ onCancel, formValues, submitTodo, history }) => {
-  const reviewFields = _.map(formField, ({ label, name }) => (
-    <div key={name}>
-      <label>{label}</label>
-      <div>{formValues[name]}</div>
-    </div>
-  ));
-
   return (
-    <div>
-      <h5>Please confirm your todo</h5>
-      {reviewFields}
-      <button onClick={onCancel}>Back</button>
-      <button onClick={() => submitTodo(formValues, history)}>Confirm</button>
+    <div className="todoform">
+      <div className="todoform__review">
+        <p className="todoform__review--instruction">
+          Please confirm your todo
+        </p>
+        <p className="todoform__review--title-label">Title</p>
+        <p className="todoform__review--title-content">{formValues["title"]}</p>
+        <p className="todoform__review--text-label">Description</p>
+        <p className="todoform__review--text-content">{formValues["text"]}</p>
+        <button className="todoform__review--back" onClick={onCancel}>
+          Back
+        </button>
+        <button
+          className="todoform__review--confirm"
+          onClick={() => submitTodo(formValues, history)}
+        >
+          Confirm
+        </button>
+      </div>
     </div>
   );
 };

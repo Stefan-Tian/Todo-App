@@ -1,0 +1,21 @@
+// .header {
+//   @include royal-gradient-background;
+// }
+
+.header__container {
+  width: 100%;
+
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 150px;
+  grid-template-columns: 120px 500px 120px;
+}
+
+.header__title {
+  border: $silver-color-border-text;
+  font-size: $font-size-lg;
+  text-shadow: 1px 1px 1px $silver-color-shadow-text;
+  grid-column: 2 / 3;
+  align-self: center;
+  justify-self: center;
+}
