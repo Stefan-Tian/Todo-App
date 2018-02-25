@@ -4,16 +4,16 @@ import * as actions from "../actions";
 
 export class TodoListFilter extends Component {
   onTextChange = e => this.props.setTextFilter(e.target.value);
-  onSortChange = e => {
-    switch (e.target.value) {
-      case "true":
-        return this.props.sortOutCompleted(true);
-      case "false":
-        return this.props.sortOutCompleted(false);
-      default:
-        return this.props.sortOutCompleted();
-    }
-  };
+  // onSortChange = e => {
+  //   switch (e.target.value) {
+  //     case "true":
+  //       return this.props.sortOutCompleted(true);
+  //     case "false":
+  //       return this.props.sortOutCompleted(false);
+  //     default:
+  //       return this.props.sortOutCompleted();
+  //   }
+  // };
 
   render() {
     return (

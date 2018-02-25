@@ -15,7 +15,7 @@ export default (state = todoDefaultState, action) => {
             ...action.payload
           };
         }
-        return action.payload;
+        return todo;
       });
     default:
       return state;

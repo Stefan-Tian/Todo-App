@@ -78,26 +78,27 @@ textarea {
     background: radial-gradient(farthest-corner at 50% 53%, #d6d5d4, #c7c5c5da);
     border-radius: 3.5%;
     box-shadow: 3.5px 3.5px 3.5px rgba(51, 50, 50, 0.8);
-    padding: 15px;
     height: 600px;
-    width: 350px;
-    overflow-y: auto; }
+    width: 340px;
+    padding: 20px;
+    overflow: auto; }
     .todolist__not-completed__todo {
       display: grid;
-      justify-content: center;
       grid-template-rows: 60px;
-      grid-template-columns: 100px 100px 120px; }
+      grid-template-columns: 120px 100px 100px; }
       .todolist__not-completed__todo__title {
         grid-column: 1 / 3;
+        justify-self: start;
+        align-self: center;
         font-size: 1.6rem;
         color: #1d1c1c;
         -webkit-text-fill-color: #313131; }
       .todolist__not-completed__todo__btn {
         background: radial-gradient(farthest-corner at 50% 50%, #dac289, #caad69);
         grid-column: 3 / 4;
-        justify-self: end;
+        justify-self: center;
         align-self: center;
-        width: 65px;
+        width: 60px;
         height: 20px;
         border: none;
         border-radius: 5px; }
@@ -105,7 +106,39 @@ textarea {
     background: radial-gradient(farthest-corner at 50% 50%, #dac289, #caad69);
     border-radius: 3.5%;
     box-shadow: 3.5px 3.5px 3.5px rgba(73, 60, 30, 0.8);
-    padding: 15px; }
+    padding: 15px;
+    height: 600px;
+    width: 340px; }
+    .todolist__completed__todo {
+      display: grid;
+      grid-template-rows: 60px;
+      grid-template-columns: 120px 100px 100px; }
+      .todolist__completed__todo__title {
+        font-size: 1.6rem;
+        grid-column: 1 / 3;
+        align-self: center;
+        color: #1d1c1c;
+        -webkit-text-fill-color: #313131; }
+      .todolist__completed__todo__btn {
+        background: #e5e4e2;
+        background: radial-gradient(farthest-corner at 50% 53%, #d6d5d4, #c7c5c5da);
+        grid-column: 3 / 4;
+        align-self: center;
+        justify-self: center;
+        width: 60px;
+        height: 20px;
+        border: none;
+        border-radius: 5px; }
+    .todolist__completed__rate {
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #1d1c1c;
+      -webkit-text-fill-color: #313131; }
+      .todolist__completed__rate-text {
+        font-size: 1.6rem;
+        font-weight: 600; }
   .todolist--grid {
     display: grid;
     grid-template-rows: 40px 40px 40px;
@@ -136,6 +169,7 @@ textarea {
   display: block;
   margin: 0 auto;
   padding: 8px;
+  margin-bottom: 10px;
   width: 300px;
   height: 35px;
   color: #b9b3b3; }
