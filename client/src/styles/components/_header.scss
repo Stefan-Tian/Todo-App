@@ -6,9 +6,8 @@
   width: 100%;
 
   display: grid;
-  justify-content: center;
   grid-template-rows: 150px;
-  grid-template-columns: 120px 500px 120px;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
 }
 
 .header__title {

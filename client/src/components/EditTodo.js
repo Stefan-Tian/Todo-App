@@ -31,8 +31,8 @@ export class EditTodo extends Component {
             name="text"
             placeholder={text}
           />
-          <p className="todoform__input--complete-label">Completed</p>
-          {completed ? (
+          {/* <p className="todoform__input--complete-label">Completed</p> */}
+          {/* {completed ? (
             <div className="todoform__input--complete-field">
               <Field
                 className="modify-checkbox"
@@ -53,7 +53,7 @@ export class EditTodo extends Component {
                 name="completed"
               />
             </div>
-          )}
+          )} */}
           <button className="todoform__input--done" type="submit">
             Done
           </button>
@@ -62,6 +62,7 @@ export class EditTodo extends Component {
   }
 
   onSubmit(values) {
+    console.log(values);
     const { id } = this.props.match.params;
     const { history } = this.props;
     this.props.editTodo(id, values, history);

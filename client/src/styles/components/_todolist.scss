@@ -1,20 +1,22 @@
 .todolist {
   margin: 5px auto;
+  height: 75vh;
 
   display: grid;
-  grid-template-rows: 600px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  justify-content: center;
 
   &__not-completed {
     @include silver-gradient-background;
     border-radius: 3.5%;
     // border: 1px solid $silver-color-border-background;
     box-shadow: 3.5px 3.5px 3.5px $silver-color-shadow-background;
-    height: 600px;
-    width: 340px;
     padding: 20px;
     overflow: auto;
+    justify-self: center;
 
     &__todo {
       display: grid;
@@ -35,8 +37,8 @@
         grid-column: 3 / 4;
         justify-self: center;
         align-self: center;
-        width: 60px;
-        height: 20px;
+        width: 70px;
+        height: 25px;
         border: none;
         border-radius: 5px;
       }
@@ -49,8 +51,7 @@
     // border: 1px solid $gold-color-border-background;
     box-shadow: 3.5px 3.5px 3.5px $gold-color-shadow-background;
     padding: 15px;
-    height: 600px;
-    width: 340px;
+    justify-self: center;
 
     &__todo {
       display: grid;
@@ -70,8 +71,8 @@
         grid-column: 3 / 4;
         align-self: center;
         justify-self: center;
-        width: 60px;
-        height: 20px;
+        width: 70px;
+        height: 25px;
         border: none;
         border-radius: 5px;
       }

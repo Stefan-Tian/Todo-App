@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import moment from "moment";
 import * as actions from "../actions";
 
 export class Todo extends Component {
@@ -19,7 +20,9 @@ export class Todo extends Component {
           {completed ? (
             <div className="todoform__text--complete">
               <p>Status: COMPLETED</p>
-              <p>CompletedAt: {completedAt}</p>
+              <p>
+                CompletedAt: {moment(completedAt).format("MMM Do YYYY, h:mm a")}
+              </p>
             </div>
           ) : (
             <p className="todoform__text--complete">

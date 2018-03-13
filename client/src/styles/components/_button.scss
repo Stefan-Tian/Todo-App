@@ -2,7 +2,8 @@
   &--link {
     font-size: $font-size-s;
     grid-column: 3 / 4;
+    padding-top: 15px;
     align-self: center; // vertically
-    justify-self: left; // horizontally
+    justify-self: center; // horizontally
   }
 }

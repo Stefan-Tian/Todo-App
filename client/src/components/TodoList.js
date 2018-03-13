@@ -12,6 +12,10 @@ class TodoList extends Component {
     this.props.fetchTodos();
   }
 
+  markAsCompleted = id => {
+    this.props.editTodo(id, { completed: true }, this.props.history);
+  };
+
   renderTodos() {
     return this.props.todo
       .filter(({ completed }) => completed === false)
@@ -25,9 +29,9 @@ class TodoList extends Component {
           </Link>
           <button
             className="todolist__not-completed__todo__btn"
-            onClick={() => this.props.deleteTodo(_id)}
+            onClick={() => this.markAsCompleted(_id)}
           >
-            REMOVE
+            DONEZO
           </button>
         </div>
       ));

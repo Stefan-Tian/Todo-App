@@ -2,7 +2,7 @@ import _ from "lodash";
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import { Link } from "react-router-dom";
-import formField from "./formField";
+import formField from "../components/formField";
 
 class TodoForm extends Component {
   renderFields() {
